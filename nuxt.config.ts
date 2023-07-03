@@ -1,7 +1,7 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'Hoone',
+      title: 'Honne',
       meta: [
         { name: 'description', content: 'Write your true thoughts daily.' }
       ]

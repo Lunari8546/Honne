@@ -1,5 +1,5 @@
 {
-  "name": "hoone",
+  "name": "honne",
   "private": true,
   "scripts": {
     "build": "nuxt build",
