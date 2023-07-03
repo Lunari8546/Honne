@@ -1,14 +1,15 @@
 export default defineNuxtConfig({
   app: {
     head: {
-      title: 'App',
+      title: 'Hoone',
       meta: [
-        { name: 'description', content: 'app description...' }
+        { name: 'description', content: 'Write your true thoughts daily.' }
       ]
     }
   },
   modules: [
     '@nuxt/image',
+    '@nuxtjs/supabase',
     '@unocss/nuxt'
   ]
 });

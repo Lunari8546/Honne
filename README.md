@@ -1,3 +1,3 @@
-# Nuxt 3 App Template
+# Hoone
 
-Personal config/template for my Nuxt 3 apps.
+Write your true thoughts daily.
