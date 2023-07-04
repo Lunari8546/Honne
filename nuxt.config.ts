@@ -3,7 +3,9 @@ export default defineNuxtConfig({
     head: {
       title: 'Honne',
       meta: [
-        { name: 'description', content: 'Write your true thoughts daily.' }
+        { name: 'description',
+          content: ''
+        }
       ]
     }
   },

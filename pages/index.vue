@@ -10,11 +10,9 @@ const client = useSupabaseAuthClient();
 const user = useSupabaseUser();
 
 const login = async() => {
-  const { user, error } = await client.auth.signInWithOAuth({
+  const { user } = await client.auth.signInWithOAuth({
     provider: 'discord'
   });
-
-  if (error) { return console.error(error); };
 };
 
 onMounted(() => {
