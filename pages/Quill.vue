@@ -1,14 +1,16 @@
 <template>
-  <Heading title="Quill" :description="description" />
-  <div class="field" v-if="!wrote">
-    <input
-      @input="validate" ref="input"
-      type="text" maxlength="20" placeholder="a spark of thought."
-    />
-    <button class="disabled" ref="btn" @click="write">Write.</button>
-  </div>
-  <div v-else>
-    <NuxtLink to="/memoir">Visit Memoir.</NuxtLink>
+  <div class="quill">
+    <Heading title="Quill" :description="description" />
+    <div class="field" v-if="!wrote">
+      <input
+        @input="validate" ref="input"
+        type="text" maxlength="20" placeholder="a spark of thought."
+      />
+      <button class="disabled" ref="btn" @click="write">Write.</button>
+    </div>
+    <div v-else>
+      <NuxtLink to="/memoir">Visit Memoir.</NuxtLink>
+    </div>
   </div>
 </template>
 

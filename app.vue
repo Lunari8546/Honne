@@ -14,7 +14,7 @@
 }
 
 * {
-  @apply m-0 p-0 font-sans;
+  @apply m-0 p-0 box-border font-sans;
   @apply bg-primary text-secondary;
   @apply outline-none select-none;
 }
@@ -34,12 +34,12 @@ input {
   @apply px-6 py-3 text-xl;
 }
 
-main {
-  @apply flex flex-col h-screen;
-  @apply justify-center items-center text-center;
-}
-
 .disabled {
   @apply text-primary cursor-not-allowed;
+}
+
+.quill, .memoir {
+  @apply flex flex-col h-screen;
+  @apply justify-center items-center text-center;
 }
 </style>
