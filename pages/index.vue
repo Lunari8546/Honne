@@ -1,5 +1,5 @@
 <template>
-  <button @click="login">Login with Discord</button>
+  <button @click="login">Login with Discord.</button>
 </template>
 
 <style scoped lang="postcss">
@@ -17,7 +17,7 @@ const login = async() => {
 
 onMounted(() => {
   watchEffect(() => {
-    if (user.value) { navigateTo('/write'); };
+    if (user.value) { navigateTo('/quill'); };
   });
 });
 </script>

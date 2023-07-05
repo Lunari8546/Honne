@@ -1,4 +1,5 @@
 <template>
+  <Heading title="Memoir" description="Review the past." />
   <Suspense>
     <template #default>
       <p v-for="thought in thoughts">

@@ -1,14 +1,25 @@
 <template>
-  <div v-if="!wrote">
-    <input ref="input" type="text" />
-    <button @click="write">Write</button>
+  <Heading title="Quill" :description="description" />
+  <div class="field" v-if="!wrote">
+    <input
+      @input="validate" ref="input"
+      type="text" maxlength="20" placeholder="a spark of thought."
+    />
+    <button class="disabled" ref="btn" @click="write">Write.</button>
   </div>
   <div v-else>
-    <p>Wrote today already!</p>
+    <NuxtLink to="/memoir">Visit Memoir.</NuxtLink>
   </div>
 </template>
 
 <style scoped lang="postcss">
+.field {
+  @apply flex flex-col;
+}
+
+.field input {
+  @apply mb-12 text-center;
+}
 </style>
 
 <script setup lang="ts">
@@ -18,6 +29,15 @@ const client = useSupabaseAuthClient();
 const user = useSupabaseUser();
 
 const input: Ref<HTMLInputElement | null> = ref(null);
+const btn: Ref<HTMLButtonElement | null> = ref(null);
+
+function validate(event) {
+  if (input.value.value != 0) {
+    btn.value.classList.remove('disabled');
+  } else {
+    btn.value.classList.add('disabled');
+  };
+};
 
 let { data: wrote } = await client
   .from('stats')
@@ -27,7 +47,7 @@ let { data: wrote } = await client
 wrote = wrote[0]['wrote'];
 
 const write = async() => {
-  if (!input.value.value || wrote) { return; };
+  if (wrote) { return; };
 
   const { data: thoughts } = await client
     .from('thoughts')
@@ -45,6 +65,12 @@ const write = async() => {
     .update({ 'wrote': true })
     .eq('user_id', user.value.id);
 
-  navigateTo('/past');
+  navigateTo('/memoir');
 };
+
+let description;
+
+wrote ?
+  description = "You've written today already." :
+  description = "What's in your mind today?";
 </script>
