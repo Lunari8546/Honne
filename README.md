@@ -1,4 +1,4 @@
-[![Banner](./.github/assets/banner.png)](https://honne.vercel.app)
+[![Banner](./public/images/banner.png)](https://honne.vercel.app)
 
 > *Japanese (noun)*: one's true feelings and thoughts.
 

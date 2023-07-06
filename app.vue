@@ -22,7 +22,7 @@
 a, button {
   @apply px-6 py-3 text-lg border-0 border-rd;
   @apply cursor-pointer transition-all decoration-none;
-  @apply bg-tertiary text-secondary;
+  @apply bg-tertiary text-secondary inline-block;
 }
 
 a:hover, button:not(.disabled):hover {
@@ -50,6 +50,6 @@ useSeoMeta({
   ogTitle: 'Honne, 本音',
   description: 'A special kind of diary to compose your true thoughts privately.',
   ogDescription: 'A special kind of diary to compose your true thoughts privately.',
-  ogImage: './.github/assets/banner.png'
+  ogImage: './public/images/banner.png'
 });
 </script>

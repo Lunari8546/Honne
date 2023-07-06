@@ -10,6 +10,12 @@
         >
           Roadmap.
         </NuxtLink>
+        <NuxtLink
+          to="https://github.com/Lunari8546/Honne"
+          target="_blank"
+        >
+          Github Repo.
+        </NuxtLink>
       </div>
       <p>Note: UI is subject to change.</p>
     </div>
@@ -29,12 +35,8 @@
   letter-spacing: -1.5rem;
 }
 
-.landing .btns button {
-  @apply w-60 mr-12;
-}
-
-.landing .btns button:last-child {
-  @apply mr-0;
+.landing .btns *:not(:last-child) {
+  @apply mr-12;
 }
 
 .landing p {
@@ -43,7 +45,7 @@
 
 @screen lt-xl {
   .landing {
-    @apply justify-center items-center text-center;
+    @apply p-18 justify-center items-center text-center;
   }
 
   .landing h1 {
@@ -51,16 +53,28 @@
 
     letter-spacing: -1rem;
   }
+
+  .landing p {
+    @apply mt-18;
+  }
 }
 
 @screen lt-md {
+  .landing {
+    @apply p-12;
+  }
+
+  .landing .btns {
+    @apply flex flex-col;
+  }
+
   .landing h1 {
     @apply text-24 mb-24;
 
     letter-spacing: -0.5rem;
   }
 
-  .landing .btns button {
+  .landing .btns *:not(:last-child) {
     @apply mr-0 mb-6;
   }
 }
@@ -77,8 +91,8 @@ const login = async() => {
 };
 
 onMounted(() => {
-  watchEffect(() => {
-    if (user.value) { navigateTo('/quill'); };
-  });
+ // watchEffect(() => {
+    // if (user.value) { navigateTo('/quill'); };
+  // });
 });
 </script>
