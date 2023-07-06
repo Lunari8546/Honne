@@ -4,7 +4,12 @@
     <div>
       <div class="btns">
         <button @click="login">Login with Discord.</button>
-        <button class="disabled">Roadmap.</button>
+        <NuxtLink
+          to="https://github.com/users/Lunari8546/projects/4"
+          target="_blank"
+        >
+          Roadmap.
+        </NuxtLink>
       </div>
       <p>Note: UI is subject to change.</p>
     </div>
