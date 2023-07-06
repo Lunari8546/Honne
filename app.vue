@@ -43,3 +43,13 @@ input {
   @apply justify-center items-center text-center;
 }
 </style>
+
+<script setup lang="ts">
+useSeoMeta({
+  title: 'Honne, 本音',
+  ogTitle: 'Honne, 本音',
+  description: 'A special kind of diary to compose your true thoughts privately.',
+  ogDescription: 'A special kind of diary to compose your true thoughts privately.',
+  ogImage: './.github/assets/banner.png'
+});
+</script>
