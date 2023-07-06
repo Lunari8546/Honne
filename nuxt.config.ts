@@ -4,13 +4,12 @@ export default defineNuxtConfig({
       title: 'Honne',
       meta: [
         { name: 'description',
-          content: ''
+          content: 'A special kind of diary to compose your true thoughts privately.'
         }
       ]
     }
   },
   modules: [
-    '@nuxt/image',
     '@nuxtjs/supabase',
     '@unocss/nuxt'
   ]

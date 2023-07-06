@@ -9,7 +9,6 @@
     "postinstall": "nuxt prepare"
   },
   "devDependencies": {
-    "@nuxt/image": "^1.0.0-rc.1",
     "@nuxtjs/supabase": "^0.3.8",
     "@types/node": "^18",
     "@unocss/nuxt": "^0.52.3",

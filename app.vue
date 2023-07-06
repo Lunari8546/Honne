@@ -39,7 +39,7 @@ input {
 }
 
 .quill, .memoir {
-  @apply flex flex-col h-screen;
+  @apply flex flex-col h-screen mx-12;
   @apply justify-center items-center text-center;
 }
 </style>
