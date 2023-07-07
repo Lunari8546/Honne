@@ -29,6 +29,19 @@ a:hover, button:not(.disabled):hover {
   @apply bg-secondary text-primary;
 }
 
+dialog {
+  @apply absolute p-12;
+  @apply border-0 border-rd;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+dialog h2 {
+  @apply font-400 mb-6;
+}
+
 input {
   @apply border-0 border-b-2;
   @apply px-6 py-3 text-xl;

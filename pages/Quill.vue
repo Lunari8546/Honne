@@ -47,7 +47,7 @@ let { data: wrote } = await client
 wrote = wrote[0]['wrote'];
 
 const write = async() => {
-  if (wrote) { return; };
+  if (!input.value.value || wrote) { return; };
 
   const { data: thoughts } = await client
     .from('thoughts')

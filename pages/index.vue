@@ -1,25 +1,35 @@
 <template>
   <div class="landing">
     <h1>Honne</h1>
-    <div>
-      <div class="btns">
-        <button @click="login">Login with Discord.</button>
-        <NuxtLink
-          to="https://github.com/users/Lunari8546/projects/4"
-          target="_blank"
-        >
-          Roadmap.
-        </NuxtLink>
-        <NuxtLink
-          to="https://github.com/Lunari8546/Honne"
-          target="_blank"
-        >
-          Github Repo.
-        </NuxtLink>
-      </div>
-      <p>Note: UI is subject to change.</p>
+    <div class="btns">
+      <button @click="loginDialog.showModal()">Login.</button>
+      <NuxtLink
+        to="https://github.com/users/Lunari8546/projects/4"
+        target="_blank"
+      >
+        Roadmap.
+      </NuxtLink>
+      <NuxtLink
+        to="https://github.com/Lunari8546/Honne"
+        target="_blank"
+      >
+        Source code.
+      </NuxtLink>
     </div>
   </div>
+  <dialog ref="loginDialog">
+    <h2>Login method:</h2>
+    <div class="methods">
+      <button @click="loginDiscord">
+        <div class="i-carbon-logo-discord"></div>
+        Discord.
+      </button>
+      <button @click="loginGithub">
+        <div class="i-carbon-logo-github"></div>
+        Github.
+      </button>
+    </div>
+  </dialog>
 </template>
 
 <style scoped lang="postcss">
@@ -35,12 +45,24 @@
   letter-spacing: -1.5rem;
 }
 
+.landing .btns {
+  @apply w-full;
+}
+
 .landing .btns *:not(:last-child) {
   @apply mr-12;
 }
 
-.landing p {
-  @apply text-2xl text-tertiary mt-12;
+.methods button {
+  @apply inline-flex;
+}
+
+.methods button div {
+  @apply mr-3 text-3xl;
+}
+
+.methods button:not(:last-child) {
+  @apply mr-6;
 }
 
 @screen lt-xl {
@@ -54,8 +76,12 @@
     letter-spacing: -1rem;
   }
 
-  .landing p {
-    @apply mt-18;
+  .methods button {
+    @apply w-full;
+  }
+
+  .methods button:not(:last-child) {
+    @apply mb-3;
   }
 }
 
@@ -84,15 +110,23 @@
 const client = useSupabaseAuthClient();
 const user = useSupabaseUser();
 
-const login = async() => {
+const loginDialog: Ref<HTMLDialogElement | null> = ref(null);
+
+const loginDiscord = async() => {
   const { user } = await client.auth.signInWithOAuth({
     provider: 'discord'
   });
 };
 
+const loginGithub = async() => {
+  const { user } = await client.auth.signInWithOAuth({
+    provider: 'github'
+  });
+};
+
 onMounted(() => {
- // watchEffect(() => {
-    // if (user.value) { navigateTo('/quill'); };
-  // });
+ watchEffect(() => {
+    if (user.value) { navigateTo('/quill'); };
+  });
 });
 </script>

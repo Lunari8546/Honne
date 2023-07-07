@@ -410,7 +410,14 @@
   resolved "https://registry.yarnpkg.com/@esbuild/win32-x64/-/win32-x64-0.17.19.tgz#8cfaf2ff603e9aabb910e9c0558c26cf32744061"
   integrity sha512-lAhycmKnVOuRYNtRtatQR1LPQf2oYCkRGkSFnseDAKPl8lu5SOsK/e1sXe5a0Pc5kHIHe6P2I/ilntNv2xf3cA==
 
-"@iconify/types@^2.0.0":
+"@iconify-json/carbon@^1.1.18":
+  version "1.1.18"
+  resolved "https://registry.yarnpkg.com/@iconify-json/carbon/-/carbon-1.1.18.tgz#b371d73c5d9b05f1cbbfc86d93b1d877fb11c8c5"
+  integrity sha512-RbKET6KS9xUMeYVq1FUH3UUA7AYNcnApkHt2AccCwTWTQQs/O58ji4Of6z6PhRajGlbfvrJzT/Uqh19OKECRvA==
+  dependencies:
+    "@iconify/types" "*"
+
+"@iconify/types@*", "@iconify/types@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@iconify/types/-/types-2.0.0.tgz#ab0e9ea681d6c8a1214f30cd741fe3a20cc57f57"
   integrity sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==
@@ -419,6 +426,18 @@
   version "2.1.6"
   resolved "https://registry.yarnpkg.com/@iconify/utils/-/utils-2.1.6.tgz#038c1144d3f696148954dce3b30064568af16285"
   integrity sha512-WJNcj/mmFQoYok+576EexlCQe/g2tZ8X9jR4QLo++z6DlVqrjwt7FBYetTQ3iyTtrPMFHcAx0JiCqtUz30XG5A==
+  dependencies:
+    "@antfu/install-pkg" "^0.1.1"
+    "@antfu/utils" "^0.7.4"
+    "@iconify/types" "^2.0.0"
+    debug "^4.3.4"
+    kolorist "^1.8.0"
+    local-pkg "^0.4.3"
+
+"@iconify/utils@^2.1.7":
+  version "2.1.7"
+  resolved "https://registry.yarnpkg.com/@iconify/utils/-/utils-2.1.7.tgz#f6be175e08194925bf2cb091a8a3e36c88b8b636"
+  integrity sha512-P8S3z/L1LcV4Qem9AoCfVAaTFGySEMzFEY4CHZLkfRj0Fv9LiR+AwjDgrDrzyI93U2L2mg9JHsbTJ52mF8suNw==
   dependencies:
     "@antfu/install-pkg" "^0.1.1"
     "@antfu/utils" "^0.7.4"
@@ -949,6 +968,11 @@
   resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.52.7.tgz#6f2ef8b6bc9c3fdef1c06ce702031454f5901a0f"
   integrity sha512-dZonrlfu33SkUMsZXlsyYSM79tr2nLer/hBEU2ZaemRik2KchxIUNlZV6kX1f1k3m+gEtVQOyx1MImpgLS8PWg==
 
+"@unocss/core@0.53.4":
+  version "0.53.4"
+  resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.53.4.tgz#97458a7a906865d4d6f31b10b72e7c8e99f88e34"
+  integrity sha512-JvmpuFOiJ8NkGzRmh0dCUmNdYjr8MmMtCX+czCmSnX2kvKyQjJIw3RIu84/DQbd/M/yxZmPjle8DrcZ1Ql86rQ==
+
 "@unocss/extractor-arbitrary-variants@0.52.7":
   version "0.52.7"
   resolved "https://registry.yarnpkg.com/@unocss/extractor-arbitrary-variants/-/extractor-arbitrary-variants-0.52.7.tgz#971ffdd051fda1e90655d75e17bdfa0738c7a6c6"
@@ -1011,6 +1035,15 @@
     "@iconify/utils" "^2.1.5"
     "@unocss/core" "0.52.7"
     ofetch "^1.0.1"
+
+"@unocss/preset-icons@^0.53.4":
+  version "0.53.4"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-icons/-/preset-icons-0.53.4.tgz#2d9e361349ab6bd064562b9155c8bc99b5c40d70"
+  integrity sha512-PSc1svzDq/o7lKLrZohFIMf0ZqOypYdBY1Wvfp+Gd6Zc4uybnCTVme3pnlgYIcjSO24ilt/PeWgx3SxD8ypMcw==
+  dependencies:
+    "@iconify/utils" "^2.1.7"
+    "@unocss/core" "0.53.4"
+    ofetch "^1.1.1"
 
 "@unocss/preset-mini@0.52.7":
   version "0.52.7"
@@ -3517,6 +3550,15 @@ ofetch@^1.0.1:
   integrity sha512-yjq2ZUUMto1ITpge2J5vNlUfteLzxfHn9aJC55WtVGD3okKwSfPoLaKpcHXmmKd2kZZUGo+jdkFuuj09Blyeig==
   dependencies:
     destr "^1.2.2"
+    node-fetch-native "^1.2.0"
+    ufo "^1.1.2"
+
+ofetch@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/ofetch/-/ofetch-1.1.1.tgz#a0e5117500f4ac02e2c61ec1bb754bc54d5ba44d"
+  integrity sha512-SSMoktrp9SNLi20BWfB/BnnKcL0RDigXThD/mZBeQxkIRv1xrd9183MtLdsqRYLYSqW0eTr5t8w8MqjNhvoOQQ==
+  dependencies:
+    destr "^2.0.0"
     node-fetch-native "^1.2.0"
     ufo "^1.1.2"
 
