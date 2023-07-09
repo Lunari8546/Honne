@@ -114,13 +114,15 @@ const loginDialog: Ref<HTMLDialogElement | null> = ref(null);
 
 const loginDiscord = async() => {
   const { user } = await client.auth.signInWithOAuth({
-    provider: 'discord'
+    provider: 'discord',
+    redirectTo: window.location.origin
   });
 };
 
 const loginGithub = async() => {
   const { user } = await client.auth.signInWithOAuth({
-    provider: 'github'
+    provider: 'github',
+    redirectTo: window.location.origin
   });
 };
 

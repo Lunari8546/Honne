@@ -4,7 +4,7 @@
     <div class="field" v-if="!wrote">
       <input
         @input="validate" ref="input"
-        type="text" maxlength="20" placeholder="a spark of thought."
+        type="text" maxlength="30" placeholder="a spark of thought."
       />
       <button class="disabled" ref="btn" @click="write">Write.</button>
     </div>
